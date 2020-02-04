@@ -5,6 +5,8 @@ Astropy
 .. image:: https://img.shields.io/pypi/v/astropy.svg
     :target: https://pypi.python.org/pypi/astropy
 
+*This is a reverted version of astropy for the WIFIS Python 2.7 Pipeline. This version has been modified to fix an issue with the iers module that is necessary for barycentric corrections*
+
 Astropy (http://www.astropy.org) is a package intended to contain much of
 the core functionality and some common tools needed for performing
 astronomy and astrophysics with Python.

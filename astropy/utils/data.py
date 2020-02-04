@@ -1077,8 +1077,10 @@ def download_file(remote_url, cache=False, show_progress=True, timeout=None):
                             if url_mirror in url2hash:
                                 return url2hash[url_mirror]
 
-        with contextlib.closing(urllib.request.urlopen(
-                remote_url, timeout=timeout)) as remote:
+        req = urllib.request.Request(remote_url, headers={'User-Agent': 'astropy/iers',\
+                'Accept':'*/*'})
+
+        with contextlib.closing(urllib.request.urlopen(req, timeout=timeout)) as remote:
             # keep a hash to rename the local file to the hashed name
             hash = hashlib.md5()
 
